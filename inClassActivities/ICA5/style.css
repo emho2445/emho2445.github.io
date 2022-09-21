@@ -16,7 +16,7 @@ article {
   height: 297mm;
   margin: 20px auto;
   position: relative;
-  background-image: url("../../img/top-image.png"), url("../../img/bottom-image.png");
+  background-image: url("top-image.png"), url("bottom-image.png");
   background-repeat: no-repeat, no-repeat;
   background-position: center top, center bottom;
   border-bottom: 1mm solid red;
@@ -42,7 +42,7 @@ h1 {
   padding: 44px 0;
   color: white;
   text-shadow: 1px 1px 1px black;
-  background-image: url("../../img/logo.png");
+  background-image: url("logo.png");
   border-radius: 50%;
   box-shadow: 4px 4px 4px black;
 }
