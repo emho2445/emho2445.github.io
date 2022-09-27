@@ -1,0 +1,68 @@
+h1{
+    font-family: 'Comfortaa', cursive;
+    font-style: normal;
+    color: #42798F;
+}
+
+h2{
+    font-family: 'Comfortaa', cursive;
+    font-style: bold;
+}
+
+h3{
+    font-family: 'Comfortaa';
+    font-style: light;
+}
+
+h4{
+    font-family: 'Comfortaa';
+    font-style: normal;
+}
+
+h5{
+    font-family: 'Comfortaa';
+    font-style: bold;
+}
+
+h6{
+    font-family: 'Comfortaa';
+    font-style: normal;
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+}
+
+ol{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+}
+
+ul{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+}
+
+a:link{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    color: #42798F;
+}
+
+a:visited{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    color: #93B5C2;
+}
+
+a:hover{
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    color: #F69E96;
+}
+
+hr{
+    border: 2px solid #D2F4EB;
+}
+
