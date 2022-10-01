@@ -44,6 +44,7 @@ ul{
     font-style: normal;
 }
 
+/*link formatting*/
 a:link{
     font-family: 'Raleway', sans-serif;
     font-style: normal;
@@ -62,7 +63,75 @@ a:hover{
     color: #F69E96;
 }
 
-hr{
-    border: 2px solid #D2F4EB;
+/*navigation bar formatting*/
+
+nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-top: 1.5rem;
 }
 
+.navBar a{
+    text-decoration: none;
+    color:#42798F;
+}
+
+
+/*mobile device*/
+@media screen and (max-width: 400px){
+    .navBar{
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+        border-bottom: 2px solid #D2F4EB;
+        position: sticky;
+        top: 0;
+        background-color: white;
+    }
+
+    h1{
+        font-size: 0.8rem;
+    }
+
+    nav a{
+        font-size: 0.8rem;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
+
+/*medium sized screen*/
+@media screen and (min-width:401px) and (max-width:1000px){
+    .navBar{
+        display:grid;
+        grid-template-columns: 1fr 2fr;
+        border-bottom: 2px solid #D2F4EB;
+        position: sticky;
+        top: 0;
+        background-color: white;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    nav a{
+        font-size: 0.9rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+
+/*big desktop screen*/
+@media screen and (min-width: 1000px){
+    .navBar{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: 2px solid #D2F4EB;
+        position: sticky;
+        top: 0;
+        background-color: white;
+    }
+}
