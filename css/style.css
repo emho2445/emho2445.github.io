@@ -39,6 +39,11 @@ p{
     font-style: normal;
 }
 
+label{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+}
+
 ol{
     font-family: 'Raleway', sans-serif;
     font-style: normal;
@@ -47,6 +52,18 @@ ol{
 ul{
     font-family: 'Raleway', sans-serif;
     font-style: normal;
+}
+
+button{
+    font-family: 'Raleway', sans-serif;
+    border-color: #93B5C2;
+    background-color: white;
+}
+
+button:hover{
+    font-family: 'Raleway', sans-serif;
+    border-color: #F69E96;
+    background-color: white;
 }
 
 hr{

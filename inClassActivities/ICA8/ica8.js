@@ -5,7 +5,7 @@ let image = document.querySelector('img');
 paragraph.addEventListener('click', textColor);
 
 image.addEventListener('mouseover', imgColor);
-image.addEventListener('mouseout', imgRestore)
+image.addEventListener('mouseout', imgRestore);
 
 function imgColor(){
     image.style.opacity = "0.5";
