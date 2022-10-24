@@ -1,0 +1,109 @@
+h1{
+  font-family: 'Comfortaa', cursive;
+  font-style: normal;
+  color: #42798F;
+  text-align: center;
+}
+
+h2{
+  font-family: 'Comfortaa', cursive;
+  font-style: bold;
+}
+
+h3{
+  font-family: 'Comfortaa';
+  font-style: light;
+}
+
+h4{
+  font-family: 'Comfortaa';
+  font-style: normal;
+}
+
+h5{
+  font-family: 'Comfortaa';
+  font-style: bold;
+  margin: 0;
+  font-size: 1em;
+}
+
+h6{
+  font-family: 'Comfortaa';
+  font-style: italic;
+  margin:0;
+  font-size: 0.9em;
+
+}
+
+p{
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+label{
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+ol{
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+ul{
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+body {
+  width: 640px;
+  margin: 0 auto;
+}
+
+img{
+  width: 640px;
+  height: 480px;
+}
+
+.full-img {
+  position: relative;
+  display: block;
+  width: 640px;
+  height: 480px;
+}
+
+
+.thumb-bar img {
+  display: block;
+  width: 20%;
+  height: 20%;
+  float: left;
+  cursor: pointer;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 480px;
+  background-color: rgba(0,0,0,0);
+}
+
+button {
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  left: 2px;
+  font-family: 'Raleway', sans-serif;
+  border-color: #93B5C2;
+  background-color: white;
+}
+
+button:hover{
+  font-family: 'Raleway', sans-serif;
+  border-color: #F69E96;
+  background-color: white;
+}
+
