@@ -79,10 +79,12 @@ for (let i = 0; i < 4; i++){
         Object.assign(json.employees[i], {
             wfh: true
         });
+        console.log("working for home");
     }else{
         Object.assign(json.employees[i], {
             wfh: false
         });
+        console.log("not working from home");
     }
 
 }
