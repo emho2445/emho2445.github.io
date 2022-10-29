@@ -60,6 +60,7 @@ console.log('Total Salary: ', totalSalary );
 for (let i = 0; i < 4; i++){
     if(json["employees"][i]["raise eligible"]==true){
         json["employees"][i].salary = json["employees"][i].salary + json["employees"][i].salary*0.1;
+        json["employees"][i]["raise eligible"] = false;
         console.log('Raise! ',json["employees"][i].salary);
     } else{
         console.log('No Raise. ',json["employees"][i].salary);
