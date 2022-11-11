@@ -1,0 +1,13 @@
+input[type=radio] {
+    margin:0px;
+  }
+  .num {
+    position:absolute;
+    display:inline-block;
+  }
+  #radiocontainer {
+    width:256px;
+    height:256px;
+    border:3px inset #c0c0c0;
+    position:relative;
+  }
