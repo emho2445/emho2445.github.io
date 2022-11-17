@@ -62,6 +62,7 @@ function update() {
       nums[i].setAttribute("speedY",-Math.abs(parseFloat(nums[i].getAttribute("speedY")))-1);
     }
   }
+  
   requestAnimationFrame(update);
 }
 // clicking a button //
@@ -94,8 +95,10 @@ function radioClick(e) {
     }
   }
 }
+
 function reset() {
   phoneNumberValue = "";
   phoneNumber.innerText = "(___) ___-____";
 }
+
 init();
