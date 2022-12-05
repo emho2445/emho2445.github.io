@@ -134,6 +134,10 @@ nav{
     text-align: center;
 }
 
+iframe {
+    height:600px;
+}
+
 
 /*mobile device*/
 @media screen and (max-width: 400px){
@@ -171,6 +175,10 @@ nav{
         grid-template-columns: 1fr 1fr;
         align-items: center;
         gap: 5px;
+    }
+
+    iframe{
+        height: 300px;
     }
 }
 
