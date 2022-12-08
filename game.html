@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bouncy Phone Number</title>
-    <link rel="stylesheet" href="assignment12.css">
+    <link rel="stylesheet" href="./assignments/assignment12/assignment12.css">
+    <!--Linking Comfortaa font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <!--linking Raleway font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>Please enter your phone number:</p>
+    <p>Solve the math equation:</p>
+    <p id="mathEq"></p>
     <div>
-        <span id="phonenumber">(___) ___-____</span> 
-        <button onclick="reset();">Reset</button><button onclick="reset();">Submit</button>
+        <span id="phonenumber">____</span> 
+        <button onclick="reset();">Clear</button><button onclick="submit();">Submit</button><button onclick="startOver()">Start Over</button>
     </div>
     
     <div id="radiocontainer">
@@ -25,6 +34,11 @@
         <span class="num"><input type="radio" value="7" id="radio7" tabindex="-1">7</span>
         <span class="num"><input type="radio" value="8" id="radio8" tabindex="-1">8</span>
         <span class="num"><input type="radio" value="9" id="radio9" tabindex="-1">9</span>
+    </div>
+
+    <div>
+        <p>Score:</p>
+        <p id="score">0</p>
     </div>
     <script src="game.js"></script>
 </body>

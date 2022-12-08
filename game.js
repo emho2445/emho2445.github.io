@@ -3,6 +3,22 @@ var nums = document.getElementsByClassName("num");
 var radioContainer = document.getElementById("radiocontainer");
 var phoneNumber = document.getElementById("phonenumber");
 var phoneNumberValue = "";
+var mathEq = document.getElementById("mathEq");
+var scorePara = document.getElementById("score");
+
+var eq = ["12-3", "3+3", "2+5", "6-2", "8-8", "1+2", "6-1", "2+7", "3+4", "2+3", "2+4", "2+6", "1+3", "4+1", "1+6", "7+1", "8+1", "3+5", "3+6", "4+4", "4+5", "2-1", "1+0", "3-2", "7-4", "8-3", "9-1", "7-2"];
+var sol = [9,6,7,4,0,3,5,9,7,5,6,8,4,5,7,8,9,8,9,8,9,1,1,1,3,5,8,5 ];
+var score = 0;
+var x;
+
+/*Random number function*/
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+}
+
+
 
 /* initialize */
 function init() {
@@ -16,6 +32,9 @@ function init() {
     //
     nums[i].firstChild.addEventListener("click", radioClick);
   }
+
+  x = getRandomInt(0,28);
+  mathEq.innerText = eq[x];
   // begin updating //
   update();
 }
@@ -65,45 +84,53 @@ function update() {
   
   requestAnimationFrame(update);
 }
-// clicking a button //
 
+// clicking a button //
 function radioClick(e) {
   e.target.checked = false;
   phoneNumberValue += e.target.value;
-  phoneNumber.innerText = "(";
-  for (var i=0;i<3;i++) {
-    if (phoneNumberValue.charAt(i)!="") {
-      phoneNumber.innerText += phoneNumberValue.charAt(i);
-    } else {
-      phoneNumber.innerText += "_";
-    }
-  }
-  phoneNumber.innerText += ") ";
-  for (var i=3;i<6;i++) {
-    if (phoneNumberValue.charAt(i)!="") {
-      phoneNumber.innerText += phoneNumberValue.charAt(i);
-    } else {
-      phoneNumber.innerText += "_";
-    }
-  }
-  phoneNumber.innerText += "-";
-  for (var i=6;i<10;i++) {
-    if (phoneNumberValue.charAt(i)!="") {
-      phoneNumber.innerText += phoneNumberValue.charAt(i);
-    } else {
-      phoneNumber.innerText += "_";
-    }
-  }
+  phoneNumber.innerText = phoneNumberValue;
 }
 
 function reset() {
   phoneNumberValue = "";
-  phoneNumber.innerText = "(___) ___-____";
+  phoneNumber.innerText = "____";
+  //score = 0;
+}
+
+function submit(){
+  console.log(phoneNumberValue);
+  console.log(sol[x]);
+  if (phoneNumberValue == sol[x]){
+    score = score +1;
+  } else{
+    score = score - 1;
+  }
+  scorePara.innerText = score;
+  console.log(score);
+  phoneNumber.innerText = "____"
+  x = getRandomInt(0,28);
+  mathEq.innerText = eq[x];
+  phoneNumberValue = "";
+
+  if(score == 6){
+    alert('You WON!!');
+    
+  }
+
+  if(score == -6){
+    alert('You LOST')
+    
+  }
+
+}
+
+function startOver(){
+  phoneNumberValue = "";
+  phoneNumber.innerText = "____";
+  score = 0;
+  scorePara.innerText = 0;
 }
 
 init();
 
-
-
-var eq = ["12-3", "3+3", "2+5", "6-2", "8-8", "1+2", "6-1", "2+7", "3+4", "2+3", "2+4", "2+6", "1+3", "4+1", "1+6", "7+1", "8+1", "3+5", "3+6", "4+4", "4+5", "2-1", "1+0", "3-2", "7-4", "8-3"];
-var sol = [9,6,7,4,0,3,5,9,7,5,6,8,4,5,7,8,9,8,9,8,9,1,1,1,3,5 ];
