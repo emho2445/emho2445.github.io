@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouncy Phone Number</title>
-    <link rel="stylesheet" href="./assignments/assignment12/assignment12.css">
+    <title>Math Game</title>
+    <link rel="stylesheet" href="./css/style.css">
     <!--Linking Comfortaa font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,13 +16,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>Solve the math equation:</p>
-    <p id="mathEq"></p>
+        <!--Navigation bar-->
+   <div class="navBar">
+        <h1>Emma Hopson</h1>
+
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="./education.html">Education</a>
+            <a href="./professional.html">Resume</a>
+            <a href="./glee.html">GLEE</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./game.html">Game</a>
+        </nav>
+    </div>
+
+    <h3>Solve the math equation:</h3>
+    <h2 id="mathEq"></h2>
     <div>
         <span id="phonenumber">____</span> 
         <button onclick="reset();">Clear</button><button onclick="submit();">Submit</button><button onclick="startOver()">Start Over</button>
     </div>
-    
+    <br>
     <div id="radiocontainer">
         <span class="num"><input type="radio" value="0" id="radio0" tabindex="-1">0</span>
         <span class="num"><input type="radio" value="1" id="radio1" tabindex="-1">1</span>
@@ -39,7 +53,9 @@
     <div>
         <p>Score:</p>
         <p id="score">0</p>
+        <br>
+        <p>*It may be easier to play this game in "Inspect Mode" by right clicking and then choosing "Inspect"</p>
     </div>
-    <script src="game.js"></script>
+    <script src="./js/game.js"></script>
 </body>
 </html>
