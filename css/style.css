@@ -213,7 +213,7 @@ a:hover{
 /*navigation bar formatting*/
 nav{
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 1fr 1fr;
     padding-top: 1.5rem;
     text-align: center;
     justify-content: center;
@@ -255,7 +255,7 @@ nav{
 
     nav{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         padding-top: 7px;
         text-align: center;
     }
@@ -344,7 +344,7 @@ nav{
 @media screen and (min-width:601px) and (max-width:1000px){
     .navBar{
         display:grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 3fr;
         border-bottom: 2px solid #D2F4EB;
         position: sticky;
         top: 0;
@@ -402,7 +402,7 @@ nav{
 @media screen and (min-width: 1000px){
     .navBar{
         display:grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
         border-bottom: 2px solid #D2F4EB;
         position: sticky;
         top: 0;
@@ -412,7 +412,7 @@ nav{
 
     nav{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     }
 
     /*Home Page Introduction*/
