@@ -190,6 +190,13 @@ form{
 }
 /* ********************************************** */
 
+/*Object Specific Page*/
+.labimg{
+    float: center;
+    height: 30%;
+    width: 30%;
+}
+
 /*link formatting*/
 a:link{
     font-family: 'Raleway', sans-serif;
