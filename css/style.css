@@ -194,7 +194,7 @@ form{
 .labimg{
     float: center;
     height: 30%;
-    width: 30%;
+    max-width: 30%;
 }
 
 /*link formatting*/
