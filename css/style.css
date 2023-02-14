@@ -192,8 +192,12 @@ form{
 
 /*Object Specific Page*/
 .labimg{
-    height: 30%;
+    /* height: 30%; */
     max-width: 30%;
+}
+
+.labimg2{
+    max-width: 80%;
 }
 
 /*link formatting*/

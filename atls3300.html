@@ -35,12 +35,129 @@
     <h1>ATLS 3300: Object Blog</h1>
 
     <div class="atlsnav">
-        <a href="#Assignment 1">Lab 1: Simple Circuits</a>
+        <a href="#Assignment2">Lab 2: React-I/O-n</a>
+        <a href="#Assignment1">Lab 1: Simple Circuits</a>
         <!-- <a href="#Assignment 2">Assignment 2</a> -->
     </div>
 
+    <!-- Lab 2 -->
+    <h2 id="Assignment2">Lab 2: React-I/O-n</h2>
+    
+    <h3>Description</h3>
+    <p>This week's lab builds upon the simple circuitry from last week. I used the Arduino IDE to program the LED and button. For the final part of this lab 
+        I built a game that times how fast it takes to hit the button. 
+    </p>
+
+    <h3>Materials Used</h3>
+    <p>
+        <ul>
+            <li>Arduino Uno R3 Controller Board</li>
+            <li>USB Cable to connect the Board to my laptop</li>
+            <li>Button</li>
+            <li>830 Tie-Points Breadboard</li>
+            <li>Breadboard Jumper Wires</li>
+            <li>2 100 Ohm Resistors and 1 10k Ohm Resistor</li>
+            <li>LED</li>
+            <li>Multimeter</li>
+        </ul>
+    </p>
+
+    <h3>Procedure</h3>
+
+    <h4>Part 1: Setting Up The Arduino IDE</h4>
+    <p>For part 1 I set up the Arduino IDE for this board. Since I already had Arduino installed I 
+        just had to make sure that the correct board and port were selected. For more information visit
+         the <a href="https://www.arduino.cc/en/software">Arduino website</a> for details on how to install the IDE. 
+    </p>
+    <p>For this lab I was using an Arduino Uno board plugged into the Comm Port 3. I used the UART to USB cable to 
+        connect the board to my laptop. The connection went to Port 3. It's important to select both the correct Port and board
+         under "Tools", if you don't then the code will not upload properly.
+    </p>
+    <p>To test if the board was connected properly I uploaded the Blink code from the example library. Since I set it up right, the 
+         Arduino LED blinked every second as seen below.
+    </p>
+    <video controls muted width="800" height="500" name="BlinkingArduinoBoard">
+        <source src=".\img\objectlab\Lab2\Lab2_BlinkVideo_Part1.MOV">
+    </video>
+
+    <h4>Part 2: Blinking an External LED</h4>
+    <p>For the second part of this Lab I blinked an external LED on the 830 Tie-Points Breadboard. To do this I used the <strong>digitalWrite()</strong> 
+        function in the Arduino IDE. When the LED is set to <strong>“LOW”</strong> that means that it is not getting any voltage and when it is set to <strong>“HIGH”</strong> 
+        it is getting voltage. 
+    </p>
+    <p>In the <Strong>loop()</Strong> portion of the script I added a <strong>digitalWrite()</strong> function to set the LED pin to HIGH so that it turns on the LED. 
+        Then I wrote a <strong>delay()</strong> statement that delayed the loop function by 1000 milliseconds or 1 second. Next, I called <strong>digitalWrite()</strong> again to set 
+        the LED pin to <strong>LOW</strong> which turns off the LED. After that I used <strong>delay()</strong> again to delay the loop for another 1000 milliseconds. This makes the 
+        LED turn on for a second then turn off for a second. 
+    </p>
+    <video controls muted width="800" height="500" name="BlinkingExternalLED">
+        <source src="img\objectlab\Lab2\Blink2.MOV">
+    </video>
+    <p>
+        It is fun to change around some of the parameters to see what happens. Below I changed the <strong>delay()</strong> function to blink on for three seconds then off for three seconds. 
+        I also did one where the LED blinks every 100 milliseconds.
+    </p>
+    <video controls muted width="800" height="500" name="FastBlinking">
+        <source src="img/objectlab/Lab2/FastBlink3.MOV">
+    </video>
+    <video controls muted width="800" height="500" name="SlowBlinking">
+        <source src="img/objectlab/Lab2/SlowBlink3.MOV">
+    </video>
+
+    <h4>Part 3: Button Press and Serial Monitor</h4>
+    <p>Next I wanted to add a button to the circuit that will change what the LED does. 
+        First I added a pin that takes an input, which is the button. We can use the <strong>digitalRead()</strong> function to see what the input pin is set to. If it is HIGH that means the pin has power 
+        and if it is LOW then the pin does not have voltage.
+    </p>
+    <p>The circuit I created is a pull-down resistor circuit where there is a 10 kilo-ohm resistor connected to the ground pin which helps regulate the voltage and current coming from the 5V 
+        pin to the input pin. Below is a picture of the circuit along with a Fritzing schematic (wire colors match) which might be easier to follow. 
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab2/Circuit4.jpg" alt="Pull-down Resistor Circuit" >
+    <img class="labimg2" src="/img/objectlab/Lab2/FritzingCircuit.jpg" alt="Fritzing Circuit Diagram">
+    <p>Next I worked with the serial monitor to test that the pin was reading the button input. Using the function <strong>Serial.println()</strong> you can print to the serial monitor. 
+        To get familiar with the serial monitor I created the sketch below to print “Arduino Uno says Hello”. To set up the sketch I set the baud rate to 9600 using <strong>Serial.begin()</strong> in the 
+        <strong>setup()</strong> function. Then in the <strong>loop()</strong> section I used <strong>Serial.println(“Arduino Uno says Hello!”)</strong> to print to the serial monitor.
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab2/HelloPrint.jpg" alt="Hello World Code" width="800">
+    <p>Now it is time to combine these concepts to create a program that prints to the serial monitor when the button is pressed and says “waiting” when the button is not pressed. Below is the code used for this process:</p>
+    <script src="https://gist.github.com/emho2445/fb9dde20e896fd55f5f65d0db1fe0463.js"></script>
+    <p>First I initialized the pin that the button is connected to. I also initialized a boolean variable that will later store if the “waiting” message was sent. Then, in the <strong>setup()</strong> function I declared the 
+        button as an input pin. It is also important to set the baud rate for the serial monitor using <strong>Serial.begin()</strong>. Now in the <strong>loop()</strong> function I need to create an if-statement to check if 
+        the button is pressed or not. The first one checks if the button is not being pressed and the “waiting” message has not been sent then we need to print “waiting” to the serial monitor and change the boolean to true 
+        since the message has now been sent. The next if-statement checks if the button is pressed. If it is then we print “success” to the serial monitor and reset the boolean variable to false since we now want it to send 
+        the “waiting” message next time the button is not pressed. Below is the video of this working. (Please note that I had a 4 second delay in my loop so that is why the serial monitor is printing slower since it is not looping as fast)
+    </p>
+    <video controls muted width="800" height="500" name="SerialMonitor">
+        <source src="img/objectlab/Lab2/ButtonPressed5.MOV">
+    </video>
+    <p>Since I added the delay the oscillation in the button was not apparent.</p>
+    
+
+
+    <h4>Part 4: LED Reaction Game</h4>
+    <p>For Part 4 I created a reaction game that times the player between when the LED turns on and when they press the button. Below is the code that I used to create this:</p>
+    <script src="https://gist.github.com/emho2445/baeb17769ee0ae4504c58d093fe544b2.js"></script>
+    <p>I start by initializing the LED pin and the button (input) pin. Now in the <strong>setup()</strong> function I declare the LED pin to be an output pin and the button pin 
+        to be an input pin. Next I set the baud rate to 9600 to set up the serial monitor. I put the welcome message in the set up because I only wanted it to print once while 
+        the player is playing the game. 
+    </p>
+    <p>
+        In the <strong>loop()</strong> function I first have the message “ready” to prepare the user that the game has started. Next I use the <strong>random(min, max)</strong> function 
+        to create a random number between 500 and 5000 that is stored in the integer <strong>randNumber</strong>. Then I delay by the number of milliseconds that randNumber holds. Then the 
+        LED turns on after that random amount of time. When the LED turns on the time is taken using the <strong>millis()</strong> function and stored to a time variable. Next we go into a 
+        “stalling” while loop that will run as long as the button is not pressed. Since we do not want anything to happen except time pass while we wait for the player to hit the button, 
+        the while loop is empty. As soon as the button is pressed the <strong>INPUT_PIN</strong> has a value of <strong>HIGH </strong>and breaks the while loop and meets the conditions 
+        for the if-statement. The time is taken again the moment the button is pressed. The LED is then turned off, resetting it for the next round. Then I print out the time in milliseconds 
+        that it took for the player to hit the button. Outside of the if-statement the game/loop is reset in the serial monitor by printing “Game Restarting” and giving the player 5 seconds 
+        to get ready. It will then loop back to the loop where it prints out “ready”. Below is a video of me playing the game!
+    </p>
+    <video controls muted width="800" height="500" name="ButtonGame">
+        <source src="img/objectlab/Lab2/Game6.MOV">
+    </video>
+
+    <hr>
     <!-- Lab 1 -->
-    <h2 class="Assignment 1">Lab 1: Simple Circuits</h2>
+    <h2 id="Assignment1">Lab 1: Simple Circuits</h2>
 
     <h3>Description</h3>
     <p>For this lab I explored the concepts of electrical components in series and in parallel. 
@@ -109,7 +226,7 @@
         </li>
     </ol>
 
-    <p><em>Published 1/31/23 4:30pm</em></p>
+    <p><em>Last Updated: 2/14/2023 1:15pm</em></p>
 
 </body>
 </html>
