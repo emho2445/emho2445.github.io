@@ -38,10 +38,120 @@
         <a href="#Assignment1">Lab 1: Simple Circuits</a>
         <a href="#Assignment2">Lab 2: React-I/O-n</a>
         <a href="#Assignment3">Lab 3: I came, I saw, I soldered</a>
+        <a href="#Assignment4">Lab 4: Analog Input</a>
         <!-- <a href="#Assignment 2">Assignment 2</a> -->
     </div>
 
+    <!-- Lab 4 -->
+    <h2 id="Assignment4">Lab 4: Analog Input</h2>
+
+    <h3>Description</h3>
+    <p>In this lab I experiment with the analog pins on the Arduino Uno by using a potentiometer.
+        I use a combination of analog and digital pins on the board to create LEDs that respond to different inputs from the user.
+    </p>
+
+    <h3>Materials Used</h3>
+    <ul>
+        <li>Arduino Uno R3 Controller Board</li>
+        <li>USB Cable</li>
+        <li>830 Tie-Points Breadboard</li>
+        <li>220 ohm Resistors</li>
+        <li>LEDs</li>
+        <li>Potentiometer (10k)</li>
+        <li>Joystick Module</li>
+        <li>Breadboard Jumper Wire (Male to Male and Male to Female)</li>
+    </ul>
+
+    <h3>Procedure</h3>
+
+    <h4>Part 1: Using a Potentiometer</h4>
+    <p>For the first part of this lab I set up a circuit with the Arduino Uno and a potentiometer. 
+        I used Lecture 5, slide 19 to set up this circuit. Below is a photo of the circuit and a schematic of it as well.
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab4/Part1_Circuit.jpeg" alt="Schematic">
+    <img class="labimg2" src="/img/objectlab/Lab4/Part1_ActualCircuit.JPG" alt="Physical Circuit">
+    <p>Next I used the Arduino IDE to program a sketch that reads out the analog values of the potentiometer. 
+        The values for our potentiometer are going to be between 0 and 1023. I used the function <strong>analogRead()</strong> of 
+        the pin to get the correct values. 
+    </p>
+    <script src="https://gist.github.com/emho2445/e62ce3b5e61f3013c018fadbcc4c1c37.js"></script>
+    <video controls muted width="800" height="500" name="Potentiometer Circuit">
+        <source src="./img/objectlab/Lab4/Part1_Arduino.mov">
+    </video>
+
+    <h4>Part 2: Light 'em Up With A Potentiometer</h4>
+    <p>For the next step in this lab I created a breadboard with five different LED circuits and the same circuit with the potentiometer. 
+        The goal is to have a different number of LED lights turn on depending on the range of the potentiometer. Below is a photo of the 
+        circuit used in this part. 
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab4/Part2_circuit.JPG" alt="LED Circuit">
+    <p>To make the code easier to understand I used the <strong>map()</strong> function to map the analog values of the potentiometer to 
+        6 different states (since we have five LEDs and the off state). You can see this in line 30 of the code below. Then I used a series 
+        of if, else if statements to output the correct pins that will turn on the correct number of LEDs.
+    </p>
+    <script src="https://gist.github.com/emho2445/371ac82310a4d3806a755d6a96a7e57f.js"></script>
+    <video controls muted width="800" height="500" name="LEDs Circuit">
+        <source src="img/objectlab/Lab4/Part2_Lights.mov">
+    </video>
+
+    <h4>Part 3: Joystick For Arduino</h4>
+    <p>Now I am going to hook up a joystick to the Arduino. This joystick has two different potentiometers and a push button. To hook it up to the 
+        Arduino Uno I used male to female wires and plugged it into the 5V, ground, A0, A1 and digital 9 pin. Below is the circuit with the joystick attached. 
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab4/Part3_Circuit.JPG" alt="Joystick Circuit">
+    <p>To see what the readings are on the joystick I created an Arduino sketch to see what it was outputting. I used the <strong>analogRead()</strong> 
+        function to get the value of the analog pin in the loop. When the joystick is in the following positions it gives the following outputs formatted like (x,y): 
+    </p>
+    <ul>
+        <li>Centered: (495, 515)</li>
+        <li>Left: (0, 515)</li>
+        <li>Right: (1023, 515)</li>
+        <li>Down: (495, 1023)</li>
+        <li>Up: (495, 0)</li>
+        <li>Up to the Right: (1023, 0)</li>
+        <li>Up to the Left: (0, 0)</li>
+        <li>Down to the Right: (1023, 1023)</li>
+        <li>Down to the Left: (0, 1023)</li>
+    </ul>
+    <script src="https://gist.github.com/emho2445/53dfdc91e2d4d8faa94584d1e9cefdd2.js"></script>
+    <video controls muted width="800" height="500" name="LEDs Circuit">
+        <source src="img/objectlab/Lab4/Part3_arduino.mov">
+    </video>
+
+    <h4>Light 'em Up With a Joystick</h4>
+    <p>In this part I kept the joystick and rearranged the LED circuits so that they would be in the shape of a plus (+). Each LED is still connected to a 
+        digital pin on the Arduino Uno. Below is a photo of the breadboard and circuit. 
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab4/Part4_Circuit.JPG" alt="Joystick LED Circuit">
+    <p>Next, I wanted to turn on the LED corresponding to the direction of the joystick. For my circuit I wanted the white one in the center on if the joystick 
+        was at rest, the red one on when the joystick was pushed up, green for the right, yellow for down and blue for the left. To do this I needed to create 
+        different conditions for the different joystick positions. I mapped the x and y potentiometer analog readings between -2 and 2 for the different positions. 
+        Then I used a series of if-statements to test which direction the joystick was. If the condition was met then the LED corresponding to the position would turn on. 
+        The code below is commented as well so you can follow along with it. 
+    </p>
+    <script src="https://gist.github.com/emho2445/dbaf92a5e33da3ca9a01cab29ac28a72.js"></script>
+    <video controls muted width="800" height="500" name="LEDs with joystick">
+        <source src="img/objectlab/Lab4/Part4_Video.MOV">
+    </video>
+
+    <h4>Part 5: Basic LED Whack-A-Mole</h4>
+    <p>For the final part of this lab I put all of the above concepts together to create a whack-a-mole style game with LEDs! First I created the user interface by 
+        printing out “Get Ready!” and blinking the center LED twice. From there I put the code in a for loop that will run 20 times to create 20 rounds in the game and started a timer.
+    </p>
+    <p>I needed to create a boolean value to see if the LED in the game is on or not. This is used later in the code to loop through a while loop until the player moves the joystick in the correct direction.</p>
+    <p>From there I used the random number created to turn one of the LEDs on at random. Then in the while loop I take in the values from the joystick and test to see if they correspond to 
+        the correct state. In order to turn off the LED and move out of the while loop the position of the joystick and random LED must match up. 
+    </p>
+    <p>When all 20 iterations of the game are completed I take the end time and outputted the gamer's time and a message that says the game is over. The code below is also commented to make it easier to read.</p>
+    <script src="https://gist.github.com/emho2445/8a73f2fea20a554cdfca07b25743c093.js"></script>
+    <video controls muted width="800" height="500" name="Whack-A-Mole">
+        <source src="img/objectlab/Lab4/Part5_Video.mov">
+    </video>
+
+
+    <hr>
     <!-- Lab 3 -->
+
     <h2 id="Assignment3">Lab 3: "I came, I saw, I soldered"</h2>
 
     <h3>Description</h3>
@@ -109,6 +219,7 @@
     <img class="labimg2" src="/img/objectlab/Lab3/Joint3.JPG" alt="Third Joint">
     <img class="labimg2" src="/img/objectlab/Lab3/FinalWire.JPG" alt="Final spliced wire">
 
+    <hr>
     <!-- Lab 2 -->
     <h2 id="Assignment2">Lab 2: React-I/O-n</h2>
     
@@ -295,7 +406,7 @@
         </li>
     </ol>
 
-    <p><em>Last Updated: 2/21/2023 2:00pm</em></p>
+    <p><em>Last Updated: 2/24/2023 9:30pm</em></p>
 
 </body>
 </html>
