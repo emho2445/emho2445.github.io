@@ -39,8 +39,204 @@
         <a href="#Assignment2">Lab 2: React-I/O-n</a>
         <a href="#Assignment3">Lab 3: I came, I saw, I soldered</a>
         <a href="#Assignment4">Lab 4: Analog Input</a>
+        <a href="#Assignment5">Lab 5: Analog Output</a>
         <!-- <a href="#Assignment 2">Assignment 2</a> -->
     </div>
+
+    <!-- Lab 5 -->
+    <h2 id="Assignment5">Lab 5: Analog Output</h2>
+
+    <h3>Description</h3>
+    <p>In this lab I use <strong>analogWrite</strong> to use the pwm (pulse width modulation) pins to analogWrite 
+    different values to both an LED and passive speaker.</p>
+
+    <h3>Materials Used</h3>
+    <ul>
+        <li>Arduino Uno R3 Controller Board</li>
+        <li>USB Cable</li>
+        <li>830 Tie-Points Breadboard</li>
+        <li>220 ohm Resistors</li>
+        <li>RGB LED</li>
+        <li>Passive Speaker</li>
+        <li>Joystick Module</li>
+        <li>Breadboard Jumper Wire (Male to Male and Male to Female)</li>
+    </ul>
+
+    <h3>Procedure</h3>
+
+    <h4>Part 1: Wiring Up the RGB LED</h4>
+    <p>To start I created a circuit that hooked up the RGB LED to the board. 
+        This LED has four prongs, ground, red, blue and green. Each RGB prong on the LED went into a pwm pin on the digital side of the arduino elegoo. 
+    </p>
+
+    <p>For this circuit I used the 220 ohm resistors for each since each prong is the same as the previous LED circuits that we used. This calculation was performed in Lab 1, step 3 for reference. 
+        Below is a picture of the circuit along with a schematic of the circuit. Note that there is another prong on the LED that goes to ground.
+    </p>
+
+    <img class="labimg2" src="/img/objectlab/Lab5/Lab5-Part1Circuit.JPG" alt="RGB Circuit">
+    <img class="labimg2" src="/img/objectlab/Lab5/Lab5Part1Fritzing.png" alt="Fritzing Schematic">
+
+    <p>Next I created a sketch that would change the color of the LED using <strong>analogWrite()</strong>. Below is the commented code on how this sketch works. </p>
+
+    <script src="https://gist.github.com/emho2445/443f356a3fb2fa89085d1e6e212eeefe.js"></script>
+
+    <p>I created the following colors using values for RGB respectively: </p>
+    <p>Pink: (255, 10, 100)</p>
+    <img class="labimg2" src="/img/objectlab/Lab5/Part1PinkLED.JPG" alt="Pink LED">
+    <p>Teal: (0, 200, 100)</p>
+    <img class="labimg2" src="/img/objectlab/Lab5/Part1TealLED.JPG" alt="Teal LED">
+    <p>Greenish: (255, 200, 100)</p>
+    <img class="labimg2" src="/img/objectlab/Lab5/Part1GreenLED.JPG" alt="Green LED">
+    <p>Royal Blue: (10, 10, 100)</p>
+    <img class="labimg2" src="/img/objectlab/Lab5/Part1BlueLED.JPG" alt="Blue LED">
+
+    <h4>Part 2: Dynamic Color Changer with Joystick</h4>
+
+    <p>In this section I wanted to change the color of the LED with the joystick from Lab 4. To do this I hooked up the joystick to the two analog pins A0 and A1. 
+        Then using the <strong>map()</strong> function I was able to map the potentiometer values (0-1023) to RGB values (0-255). Then using <strong>analogWrite()</strong> 
+        I was able to use the input from the joystick to write out different values for the pins. Since there are only two potentiometers and three colors I set green to be a 
+        constant value so the joystick was only changing the red and blue values. I could have used <strong>random()</strong> to create a different value for green each time the 
+        loop ran but that would create a flashing effect that I didn't want. 
+    </p>
+    <script src="https://gist.github.com/emho2445/c2a5e48cca3b9e74f7f1b7359e030b7f.js"></script>
+    <video controls muted width="800" height="500" name="Potentiometer Circuit">
+        <source src="./img/objectlab/Lab5/Part2LEDchange.MOV">
+    </video>
+
+
+    <h4>Part 3: Musical Notes With Passive Buzzer</h4>
+
+    <p>In this part we are introducing a new component, the passive speaker. The speaker was set up so the positive side of the buzzer connected to pin 5 (a pwm pin) 
+        and the other side was connected to ground. Below is a photo of the circuit. 
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab5/Part3Circuit.JPG" alt="Blue LED">
+    <script src="https://gist.github.com/emho2445/9a06fea041e0b321bb58b05d4d961e3a.js"></script>
+
+    <p>Next I created the following arduino sketch that turns the buzzer on for one second and then off for one second. To do this I used the function <strong>tone()</strong> 
+        to set the frequency of the buzzer to 440 Hz and then <strong>noTone</strong> to turn it off.
+    </p>
+    <video controls="controls" width="800" height="500" name="Potentiometer Circuit">
+        <source src="./img/objectlab/Lab5/Part3Buzzer.MOV">
+    </video> 
+    
+    <p>To play different notes I included a pitches.h file that defines all of the different notes. It is in the same folder as the Part 3 code so that the Part 3 file can access the .h file.</p>
+    <img class="labimg2" src="/img/objectlab/Lab5/Lab5-Part3ArduinoPitches.png" alt="pitches.h">
+    
+    <p>I decided to play the DS3 note with a frequency of 156 Hz from the pitches file. </p>
+    <script src="https://gist.github.com/emho2445/d7cab58ea04c2ed7d0ccd7ffe6f9d3c6.js"></script>
+    <video controls="controls" width="800" height="500" name="Potentiometer Circuit">
+        <source src="./img/objectlab/Lab5/Part3BuzzerLow.MOV">
+    </video>
+    
+    <h4>Part 4: Melody From The Buzzer</h4>
+
+    <p>Now that I can draw from the pitches.h file to get many different notes I created the Star Wars Imperial March song with the notes and durations given by the assignment. </p>
+    <p>I created different arrays, one stored the note value, the next stored the duration of the note, and then a boolean array of if it was a dotted note or not. Note that the durations that 
+        I stored were what the whole note should be divided by to get the correct length.
+    </p>
+    <p>Then I called a for loop that loops through all of these arrays for each note. Below is the code, commented so you can follow along and a video after of what it created.</p>
+    <script src="https://gist.github.com/emho2445/f190115d82185350b588ffa17311b309.js"></script>
+    <video controls="controls" width="800" height="500" name="Potentiometer Circuit">
+        <source src="./img/objectlab/Lab5/Part4Imperial.MOV">
+    </video>
+
+    <p>Next I created my own song using the same concepts. I decided to do a simple version of Amazing Grace. Below is the table of the notes. </p>
+    <table>
+        <tr>
+            <td>Note:</td>
+            <td>Duration:</td>
+            <td>Dotted:</td>
+        </tr>
+        <tr>
+            <td>C5</td>
+            <td>4</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>F5</td>
+            <td>2</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>A5</td>
+            <td>8</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>F5</td>
+            <td>8</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>A5</td>
+            <td>2</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>G5</td>
+            <td>4</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>F5</td>
+            <td>2</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>D5</td>
+            <td>4</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>C5</td>
+            <td>2</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>C5</td>
+            <td>4</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>F5</td>
+            <td>2</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>A5</td>
+            <td>8</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>F5</td>
+            <td>8</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>A5</td>
+            <td>2</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>G5</td>
+            <td>4</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>C6</td>
+            <td>2</td>
+            <td>true</td>
+        </tr>
+
+    </table>
+
+    <p>Using this information and the same coding concepts as above I created the song in Arduino. </p>
+    <script src="https://gist.github.com/emho2445/0accc4f46926741e3bc1515ba87f8de1.js"></script>
+    <video controls="controls" width="800" height="500" name="Potentiometer Circuit">
+        <source src="./img/objectlab/Lab5/Part4Amazing.mov">
+    </video>
+
+
 
     <!-- Lab 4 -->
     <h2 id="Assignment4">Lab 4: Analog Input</h2>
@@ -374,7 +570,7 @@
         </li><br>
 
         <li>Next I created the same simple circuit but used the 5 volt source. Since the voltage was higher I needed to use a different 
-            resistor to make sure the current was within range. I found that the resistor needs to be at least ______ ohms so I just used 
+            resistor to make sure the current was within range. I found that the resistor needs to be at least 167 ohms so I just used 
             two 100 ohm resistors in series with each other. <br>
             <img class="labimg" src="/img/objectlab/5Schematic.jpg" alt="5 Volt Simple Circuit Schematic">
             <img class="labimg" src="/img/objectlab/simpleCircuit_5V.jpg" alt="5 Volt Simple Circuit">
@@ -406,7 +602,7 @@
         </li>
     </ol>
 
-    <p><em>Last Updated: 2/24/2023 9:30pm</em></p>
+    <p><em>Last Updated: 3/5/2023 6:45pm</em></p>
 
 </body>
 </html>
