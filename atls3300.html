@@ -40,8 +40,122 @@
         <a href="#Assignment3">Lab 3: I came, I saw, I soldered</a>
         <a href="#Assignment4">Lab 4: Analog Input</a>
         <a href="#Assignment5">Lab 5: Analog Output</a>
+        <a href="#Assignment6">Lab 6: Motors</a>
         <!-- <a href="#Assignment 2">Assignment 2</a> -->
     </div>
+
+    <!-- Lab 6 -->
+    <h2 id="Assignment6">Lab 6: Motors</h2>
+
+    <h3>Description</h3>
+    <p>In this lab I explore how to use the DC Motor and the Servo motor with the power supply module and the Arduino.</p>
+
+    <h3>Materials</h3>
+    <ul>
+        <li>Arduino Uno R3 Controller Board</li>
+        <li>USB Cable</li>
+        <li>830 Tie-Points Breadboard</li>
+        <li>Power Supply Module</li>
+        <li>9V Battery</li>
+        <li>Servo Motor</li>
+        <li>DC Motor</li>
+        <li>L293D Motor Driver</li>
+        <li>10k Ohm Potentiometer</li>
+        <li>Breadboard Jumper Wire (Male to Male)</li>
+    </ul>
+
+    <h3>Procedure</h3>
+    <h4>Part 0: Setting Up Power</h4>
+    <p>In this lab I am going to be powering my circuit with the power supply module. This is because the 
+        motors are going to be drawing much more power than the Arduino board/pins can provide. By using the 
+        9V battery I am less likely to fry my board and USB port in my computer. 
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab6/Lab6Part0.JPG" alt="Power Supply Module Connection">
+
+    <h3>Part 1: Wiring The Servo</h3>
+    <p>The first motor that I connected was the servo motor. This motor connects to one of the pwm pins (3, 5, 6, 9, 10, 11). 
+        I connected my servo motor to pin 9 as seen below.
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab6/Lab6Part1Circuit.JPG" alt="Servo Motor Circuit">
+
+    <p>Next I installed the Servo library in my Arduino IDE by going to Library Manger and searching for “servo”.</p>
+    <img class="labimg2" src="/img/objectlab/Lab6/Lab6Part1Library.png" alt="Servo Library Installed">
+
+    <p>Using this library I used the sketch in the lab assignment to move the motor arm between 0 and 180 degrees!</p>
+    <video controls muted width="800" height="500" name="Servo Motor Sweeping">
+        <source src="./img/objectlab/Lab6/Lab6Part1Sweeping.MOV">
+    </video>
+    
+    <h4>Part 2: Controlling The Servo</h4>
+    <p>In this part of the lab I wanted to control the movement of the servo motor with a potentiometer. I connected the potentiometer to pin A0. </p>
+    <img class="labimg2" src="/img/objectlab/Lab6/Lab6Part2Circuit.JPG" alt="Potentiometer Connected">
+
+    <p>To move the motor in sync with the potentiometer I used the <strong>map()</strong> function to change the range on the 
+        potentiometer to be from 0-180 instead of 0-1023. Below is the sketch I used to carry out this task. 
+    </p>
+    <script src="https://gist.github.com/emho2445/0843f5a3b7f2b54c4a220a59cd84e0f9.js"></script>
+    <video controls muted width="800" height="500" name="Servo Motor Mimicking Potentiometer">
+        <source src="./img/objectlab/Lab6/Lab6Part2Mimic.MOV">
+    </video>
+
+    <p>Next, I changed it so the potentiometer controls the speed at which the motor rotates. To do this I used the sweeping sketch from 
+        Part 1 and inside each of the for loops I created an int that made the delay between 5ms and 50ms. I used the <strong>map()</strong> 
+        function for this as well. 
+    </p>
+    <script src="https://gist.github.com/emho2445/78bb3105363ae9f2cbc8f6b8d88bf834.js"></script>
+    <video controls muted width="800" height="500" name="Potentiometer Controlling Servo Speed">
+        <source src="./img/objectlab/Lab6/Lab6Part2Speed.MOV">
+    </video>
+
+    <h4>Part 3: DC Motor and Motor Driver</h4>
+    <p>Next I used the DC motor to create a different circuit. When connected to the power supply module the motor turns on.</p>
+    <img class="labimg2" src="/img/objectlab/Lab6/Lab6Part3Circuit1.JPG" alt="DC Motor Connected">
+    <video controls muted width="800" height="500" name="DC Motor Fan On">
+        <source src="./img/objectlab/Lab6/Lab6Part3FanOn.MOV">
+    </video>
+
+    <p>Since the motor can move in either direction depending on the flow of current, we need to use a motor driver to control which way 
+        the current goes through the motor. This is done using the L293D motor driver. Below is a picture of the set-up. 
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab6/Lab6Part3Circuit2.JPG" alt="Motor Driver Connected">
+
+    <p>We can use the Arduino to control which parts of the motor driver are on and which parts are off. Below is the code 
+        for switching the direction of current in the motor. 
+    </p>
+    <script src="https://gist.github.com/emho2445/7c23cf745fc36b86f8164e92aea13bc2.js"></script>
+    <video controls muted width="800" height="500" name="DC Motor Fan Switch Directions">
+        <source src="./img/objectlab/Lab6/Lab6Part3Switch.mov">
+    </video>
+
+    <p>Next I modified the code to control how fast the fan spun. I used the <strong>analogWrite()</strong> function in a for-loop 
+        to change the duty cycle on the speed control pin (8 on the L293D and pin 5 on the Arduino). In the <strong>rampUp()</strong> 
+        function I increased the duty cycle on the pwm pin and in the <strong>rampDown()</strong> function I decreased the duty cycle 
+        until the fan stopped. Below is the code and video. 
+    </p>
+    <script src="https://gist.github.com/emho2445/195f10e45552ac006687f8ba22e3e404.js"></script>
+    <video controls muted width="800" height="500" name="DC Motor Fan Speed Control">
+        <source src="./img/objectlab/Lab6/Lab6Part3Speed.MOV">
+    </video>
+
+    <h4>Part 4: Table-Top Fan</h4>
+
+    <p>For part 4 I am going to use both the servo motor and the DC motor to create an oscillating table-top fan. 
+        First I attached the DC motor to the top of the servo motor as seen below.
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab6/Lab6Part4Attach.JPG" alt="Servo Motor and DC Motor Connected">
+
+    <p>Next, I need to add the servo motor back to my circuit. I kept the same DC motor circuit as in Part 4 and added the servo to pin 11. </p>
+    <img class="labimg2" src="/img/objectlab/Lab6/Lab6Part4Circuit.JPG" alt="Servo Motor and DC Motor Circuit">
+
+    <p>To control both motors I used the Arduino sketch below. In the loop function it sets a constant rate of 
+        the DC fan by setting the pwm value to 180 which is about 70% of 255. Then it uses the same loops from 
+        Part 1 to make the servo go in a sweeping motion. The code is commented to help understand. 
+    </p>
+    <script src="https://gist.github.com/emho2445/b91e065377883d252d4d300295555311.js"></script>
+    <video controls muted width="800" height="500" name="Table-Top Fan">
+        <source src="./img/objectlab/Lab6/Lab6Part4Fan.MOV">
+    </video>
+    
 
     <!-- Lab 5 -->
     <h2 id="Assignment5">Lab 5: Analog Output</h2>
@@ -602,7 +716,7 @@
         </li>
     </ol>
 
-    <p><em>Last Updated: 3/5/2023 6:45pm</em></p>
+    <p><em>Last Updated: 3/12/23 7:30pm</em></p>
 
 </body>
 </html>
