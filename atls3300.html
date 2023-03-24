@@ -41,8 +41,39 @@
         <a href="#Assignment4">Lab 4: Analog Input</a>
         <a href="#Assignment5">Lab 5: Analog Output</a>
         <a href="#Assignment6">Lab 6: Motors</a>
+        <a href="#Assignment7">Lab 7: Processing</a>
         <!-- <a href="#Assignment 2">Assignment 2</a> -->
     </div>
+
+    <!-- Lab 7 -->
+    <h2 id="Assignment7">Lab 7: Processing</h2>
+
+    <h3>Description</h3>
+
+    <h3>Materials</h3>
+
+    <h3>Procedure</h3>
+    <h4>Part 0: Setting Up Processing</h4>
+
+    <p>In order to complete this lab I had to install <a href="https://processing.org/releases">Processing</a>. I had a problem since I couldn't download 
+        the regular version of Processing because my computer is really old and the new Processing isn't supported 
+        on my laptop. So I had to go into previous releases of Processing and download the 2020 version of it. 
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab7/Lab7Part0.png" alt="Processing Development Environment">
+
+    <h4>Part 1: Creating With Processing</h4>
+    <p>To get familiar with Processing I used the code below to draw circles on a canvas. This sketch does not require any Arduino hookup. 
+        It can simply be run in Processing. The original code was drawing bigger white circles and I changed it so that the circles were 
+        smaller and hot pink. 
+    </p>
+
+    <video controls muted width="800" height="500" name="Original Circle Sketch">
+        <source src="./img/objectlab/Lab7/Lab7Part1Original.MOV">
+    </video>
+    <script src="https://gist.github.com/emho2445/697b5bcb50acfc7fa2b544f8d2eb95f5.js"></script>
+    <video controls muted width="800" height="500" name="Modified Circle Sketch">
+        <source src="./img/objectlab/Lab7/Lab7Part1After.MOV">
+    </video>
 
     <!-- Lab 6 -->
     <h2 id="Assignment6">Lab 6: Motors</h2>
@@ -672,22 +703,22 @@
         <li>The first step in this lab was to set up power to the breadboard. I attached the power supply module to the breadboard so that
             one column of the board would be 5 volts and the other side would be 3.3 volts. Below are pictures of the multimeter reading out 5 
             volts and on the other side 3.3 volts: <br>
-            <img class="labimg" src="/img/objectlab/3_3VoltReading.jpg" alt="3.3 Volt Reading" >
-            <img class="labimg" src="/img/objectlab/5VoltReading.jpg" alt="5 Volt Reading">
+            <img class="labimg" src="/img/objectlab/Lab1/3_3VoltReading.jpg" alt="3.3 Volt Reading" >
+            <img class="labimg" src="/img/objectlab/Lab1/5VoltReading.jpg" alt="5 Volt Reading">
         </li> <br>
 
         <li>Next I created a simple circuit that consisted of a 9 volt battery, a 100 ohm resistor, a blue LED and wires to connect them.
              For this circuit I used the 3.3V side of the breadboard. <br>
-             <img class="labimg" src="/img/objectlab/SimpleSchematic.jpg" alt="3.3 Volt Simple Circuit Schematic">
-             <img class="labimg" src="/img/objectlab/simpleCircuit_3V.jpg" alt="3.3 Volt Simple Circuit">
+             <img class="labimg" src="/img/objectlab/Lab1/SimpleSchematic.jpg" alt="3.3 Volt Simple Circuit Schematic">
+             <img class="labimg" src="/img/objectlab/Lab1/simpleCircuit_3V.jpg" alt="3.3 Volt Simple Circuit">
              <!-- Insert image of simple circuit and schematic -->
         </li><br>
 
         <li>Next I created the same simple circuit but used the 5 volt source. Since the voltage was higher I needed to use a different 
             resistor to make sure the current was within range. I found that the resistor needs to be at least 167 ohms so I just used 
             two 100 ohm resistors in series with each other. <br>
-            <img class="labimg" src="/img/objectlab/5Schematic.jpg" alt="5 Volt Simple Circuit Schematic">
-            <img class="labimg" src="/img/objectlab/simpleCircuit_5V.jpg" alt="5 Volt Simple Circuit">
+            <img class="labimg" src="/img/objectlab/Lab1/5Schematic.jpg" alt="5 Volt Simple Circuit Schematic">
+            <img class="labimg" src="/img/objectlab/lab1/simpleCircuit_5V.jpg" alt="5 Volt Simple Circuit">
             <!-- Insert image from the 5 volt side with equations --> 
         </li><br>
 
@@ -695,9 +726,9 @@
             After this I incorporated a momentary switch into the circuit in series with the LED and resistor. When adding the button the 
             LED will only turn on when the button is pressed. This is because the button creates a break in the circuit when not pressed, 
             this does not allow current to flow. When the button is pressed the circuit is connected and current can flow freely. <br>
-            <img class="labimg" src="/img/objectlab/SeriesButton.jpg" alt="Button in Series Schematic">
+            <img class="labimg" src="/img/objectlab/Lab1/SeriesButton.jpg" alt="Button in Series Schematic">
             <video controls="controls" width="800" height="600" name="Series LED">
-                <source src="/img/objectlab/SeriesButton.mov">
+                <source src="/img/objectlab/Lab1/SeriesButton.mov">
             </video>
         </li><br>
 
@@ -709,9 +740,9 @@
             where it either goes to the LED (acting like a resistor) or through the button (acting like a wire) it chooses the “path of least resistance” 
             and the current goes through the button instead of the branch with the LED. When the button is not pressed then that loop is a broken circuit 
             and no current can flow through that branch causing all of it to go to the LED. <br>
-            <img class="labimg" src="/img/objectlab/ParallelButton.jpg" alt="Button in Parallel Schematic">
+            <img class="labimg" src="/img/objectlab/Lab1/ParallelButton.jpg" alt="Button in Parallel Schematic">
             <video controls="controls" width="800" height="600" name="Parallel LED">
-                <source src="/img/objectlab/ParallelButton.MOV">
+                <source src="/img/objectlab/Lab1/ParallelButton.MOV">
             </video>
         </li>
     </ol>
