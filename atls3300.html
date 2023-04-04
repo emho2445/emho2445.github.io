@@ -75,6 +75,61 @@
         <source src="./img/objectlab/Lab7/Lab7Part1After.MOV">
     </video>
 
+    <h4>Part 2: Processing With Arduino</h4>
+    <p>For this next section of the lab I explored using the Arduino Uno, Arduino IDE and Processing to all communicate with each other. 
+        I started by connecting the joystick to the Arduino Uno. 
+    </p>
+    <img class="labimg2" src="/img/objectlab/Lab7/Lab7Part2Joystick.JPG" alt="Joystick Setup">
+    <img class="labimg2" src="/img/objectlab/Lab7/Lab7Part2Fritzing.png" alt="Joystick Diagram">
+
+    <p>I created a sketch that read in the values from the x and y potentiometers on the joystick and the input of the button on the joystick. 
+        It then printed it out to a single line in the serial monitor in the following format: “xVal:##;yVal:##;swVal:##”. The code and functionality 
+        video are below:
+    </p>
+    <video controls muted width="800" height="500" name="Joystick Reading Values">
+        <source src="./img/objectlab/Lab7/Lab7Part2JoystickPrint.MOV">
+    </video>
+    <script src="https://gist.github.com/emho2445/b376d5e45b008890315503aff90e4914.js"></script>
+
+    <p>Now I went to the processing interface and started with the base code that was given in the lab assignment. I read in the values from the hashmap 
+        that was parsed from the Arduino and was able to map those values to the dimensions of the canvas that we created. Now when you move the joystick 
+        it will control where the circle is drawn. If you press the button the circle will change to black. 
+    </p>
+    <video controls muted width="800" height="500" name="Joystick Controling Drawing">
+        <source src="./img/objectlab/Lab7/Lab7Part2Processing.MOV">
+    </video>
+    <script src="https://gist.github.com/emho2445/5fa516b4f4b5d54c7ceee84b0772e3eb.js"></script>
+
+    <h4>Part 3: Creating Your Own Visualization</h4>
+    <p>Now that I understand how Arduino IDE and Processing IDE communicate I can incorporate more sensor inputs. For part 3 I used the joystick, 
+        potentiometer and ultrasonic sensor. I wanted to use the sensors to manipulate the behavior of a <a href="https://processing.org/examples/sinewave.html">sine wave</a>.
+    </p>
+    <p>First I connected all of the sensors to the Arduino Uno and created an arduino sketch that reads in the data from the sensors. I made sure to keep the 
+        serial output in the same format as part two. Below is the Arduino IDE code: 
+    </p>
+
+    <script src="https://gist.github.com/emho2445/9111183ea7eb5eaecd797cd2ebde3a61.js"></script>
+
+    <p>Next I had to parse this data into the Processing IDE. I used the same process as in Part 2 to get the data in. However, because of the way the sine function was made 
+        I needed to make sure that all of my sensor inputs in Arduino were floats and not ints. Next I changed the draw functions that draw the wave to include parameters in 
+        them so the variable can change. I made the following changes to control the wave: 
+    </p>
+    <ul>
+        <li>The joystick position changes the color of the sine wave</li>
+        <li>Pressing the joystick button changes the background from black to white</li>
+        <li>The ultrasonic sensor changes the amplitude of the wave</li>
+        <li>The potentiometer changes the period (or the number of peaks) in the given frame</li>  
+    </ul>
+    <p>Below is the processing code used for this:</p>
+
+    <script src="https://gist.github.com/emho2445/74a73c513c1bd09abf3e9a1ec879958c.js"></script>
+    <video controls muted width="800" height="500" name="Sine Wave Manipulation">
+        <source src="./img/objectlab/Lab7/Lab7Part3.MOV">
+    </video>
+
+
+
+
     <!-- Lab 6 -->
     <h2 id="Assignment6">Lab 6: Motors</h2>
 
@@ -747,7 +802,7 @@
         </li>
     </ol>
 
-    <p><em>Last Updated: 3/12/23 7:30pm</em></p>
+    <p><em>Last Updated: 4/4/23 12:50am</em></p>
 
 </body>
 </html>
