@@ -207,6 +207,15 @@ form{
 }
 /* ********************************************** */
 
+/* Class Portal Page Specific */
+.classPortalNav{
+    display: flex;
+    flex-flow: row, nowrap;
+    align-items: center; /* aligned it to the cross-axis which is vertical in this case */
+    justify-content: space-between;
+}
+/* ********************************************** */
+
 /*Object Specific Page*/
 .labimg{
     /* height: 30%; */
@@ -337,6 +346,7 @@ nav{
 
     iframe{
         height: 300px;
+        width: 100%;
     }
 
     object{
