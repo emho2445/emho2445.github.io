@@ -216,6 +216,19 @@ form{
 }
 /* ********************************************** */
 
+/* Materials Specific Page */
+.drawTree{
+    /* height: 30%; */
+    max-width: 30%;
+}
+
+#treeImg{
+    display: flex;
+    flex-flow: row, nowrap;
+    justify-content: space-around;
+}
+/* *********************************************** */
+
 /*Object Specific Page*/
 .labimg{
     /* height: 30%; */
