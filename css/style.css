@@ -222,7 +222,7 @@ form{
     max-width: 30%;
 }
 
-#treeImg{
+.treeImg{
     display: flex;
     flex-flow: row, nowrap;
     justify-content: space-around;
