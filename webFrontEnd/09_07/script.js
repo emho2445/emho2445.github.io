@@ -41,4 +41,5 @@ for(const key in classroom){
     console.log(`${key}: ${classroom[key]}`);
 }
 
+//arrow functions
 animals.forEach(animal => console.log(animal));
