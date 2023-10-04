@@ -1,0 +1,20 @@
+{
+  "name": "09_28",
+  "version": "1.0.0",
+  "description": "Class Example",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack",
+    "serve": "http-server",
+    "dev": "webpack serve"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.3",
+    "lodash": "^4.17.21",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
