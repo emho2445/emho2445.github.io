@@ -6,6 +6,7 @@
     <title>Assignment 2</title>
     <!-- Linking Style Sheet -->
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="./style.css">
     <!--Linking Comfortaa font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +15,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- linking javascript -->
+    <script defer src="./script.js"></script>
 </head>
 <body>
-    <p></p>
+    <h1>Create a story!</h1>
+    <div>
+        <section></section>
+        <p>Use the form below to create your very own story!</p>
+    </div>
+
+    <form id="form">
+        <div>
+            <label for="animal">Animal:</label>
+            <input id="animal" type="text" name="animal">
+        </div>
+
+        <div>
+            <label for="adjectiveOne">Adjective:</label>
+            <input id="adjectiveOne" type="text" name="adjectiveOne">
+        </div>
+
+        <div>
+            <label for="distance">Number:</label>
+            <input id="distance" type="range" name="distance" list="values">
+            <datalist id="values">
+                <option value="0" label="0"></option>
+                <option value="100" label="100"></option>
+            </datalist>
+        </div>
+        
+        <div>
+            <label for="phoneNumber">Phone Number:</label>
+            <input id="tel" type="tel" name="phoneNumber" placeholder="000-000-0000">
+        </div>
+    
+        <input type="submit">
+        
+    </form>
+
+    <p id="output"></p>
+    <p id="newStory"></p>
+
+    <button type="button">Reset</button>
+
 </body>
 </html>
