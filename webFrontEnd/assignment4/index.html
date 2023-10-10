@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <!-- Linking Style Sheet -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../assignment2/style.css">
+    <!--Linking Comfortaa font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <!--linking Raleway font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Assignment 4: APIs and JSON</h1>
+
+    <hr>
+
+    <p>Pick a genre to find good books to read!</p>
+    
+    <form>
+        <label for="bookGenres">Choose a book genre:</label>
+        <select name="genres" id="bookGenres">
+            <option value="">--Please choose an option--</option>
+            <option value="love">Romance</option>
+            <option value="mystery">Mystery</option>
+            <option value="biography">Biography</option>
+            <option value="scifi">Science Fiction</option>
+            <option value="historical">Historical</option>
+        </select>
+    
+        <input type="submit">
+    </form>
+
+    <!-- Display Area -->
+    <section>
+        <div class="quote-text" id="bookTitles"></div>
+    </section>
+
+    <br>
+    <hr>
+
+    <a href="../../webClassPortal/assignments.html">Back to Assignments page</a>
+
+    <script src="./script.js"></script>
+</body>
+</html>
