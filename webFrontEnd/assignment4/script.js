@@ -18,7 +18,7 @@ form.addEventListener('submit', (event) => {
     let genre = data.get('genres');
 
     //Creates the API url string based on the genre picked
-    let url = `http://openlibrary.org/subjects/${genre}.json`;
+    let url = `https://openlibrary.org/subjects/${genre}.json`;
     
     //Calls the url and calls the display function
     fetch(url)
