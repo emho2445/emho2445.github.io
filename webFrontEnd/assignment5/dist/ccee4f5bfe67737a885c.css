@@ -1,0 +1,26 @@
+/* Buttons */
+input{
+    font-family: 'Raleway', sans-serif;
+    border-color: #93B5C2;
+    background-color: white;
+}
+
+input:hover{
+    font-family: 'Raleway', sans-serif;
+    border-color: #F69E96;
+    background-color: white;
+}
+
+datalist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    writing-mode: horizontal-tb;
+    width: 200px;
+    font-family: 'Raleway', sans-serif;
+}
+
+input[type="range"] {
+    width: 200px;
+    margin: 0;
+}
