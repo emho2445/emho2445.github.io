@@ -4,9 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1</title>
+        <!-- Linking Style Sheet -->
+        <link rel="stylesheet" href="../../css/style.css">
+        <!--Linking Comfortaa font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+        <!--linking Raleway font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <script type="module" src="./index.js"></script>
 </head>
 <body>
+    <h1>The Great Lunar Expedition for Everyone Data Visualizations</h1>
+
+    <p>
+        The Great Lunar Expedition for Everyone (GLEE) is a NASA-funded technology demonstration aiming to 
+        implement distributed data in planetary science by deploying a network of small solar-powered sensing PCBs, 
+        called LunaSats, across the lunar surface. The datasets created by recording the time evolution of physical 
+        variables at several locations simultaneously, producing a time-varying and space-varying dataset capable of 
+        powerful scientific insight. As the expansion of the space industry takes place, so does the need for reliable, 
+        cost-effective, data collection across planetary bodies such as the Moon.  
+    </p>
+
+    <h2>Accelerometer Sensor Testing</h2>
+    <p>Micrometeorites can pose a serious issue to astronauts, electronics, and any kind of structure on the lunar surface. 
+        On average, 33 tons = 73,000 lbs. of meteoritic material intersect the Earth's path every day. The moon is in the 
+        same meteoroid environment as Earth and experiences similar conditions. These meteorites are burned up in our atmosphere, 
+        but the moon does not possess this shield. The ability to detect, measure, and record micrometeorite impacts on the lunar 
+        surface would provide valuable data to the Hyperdrive Science team, GLEE, NASA, and the Artemis missions.
+    </p>
+
+    <p>The goal of this test is to:</p>
+    <ol>
+        <li>
+            Determine the sensitivity and the range of our accelerometer for micrometeorite impacts. 
+        </li>
+        <li>
+            See how different environments/mediums affect the propagation of the impact. (Sand, dirt, clay) 
+        </li>
+        <li>
+            To test accelerometer performance under various environmental conditions applicable to our mission.
+        </li>
+        <li>
+            Understand the sampling rate of the accelerometer and see if it is sufficient.
+        </li>
+    </ol>
+
+    <p>
+        Click the buttons under the graph to see the impact detection results from different tests.
+    </p>
+
+    <h3 class="graphTitle">Accelerometer Impact Detection</h3>
     <div id="container"></div>
+    <br>
+    <button type="button" id="fieldTest">Accelerometer Dirt Field Test</button>
+    <button type="button" id="vbTest">Accelerometer Volleyball Court Test</button>
+    
+
+    <hr>
+
+    <h2>Spacecraft LunaSat Deployment</h2>
+    <p>
+        HDP 1.1 is a prototype designed to house LunaSats and then deploy them on the lunar surface in a 
+        manner that satisfies given requirements for dispersal. Some of these requirements include the 
+        precise deployment of at least 75 LunaSats from an independently operating design that is built to 
+        survive the lunar environment. HDP 1.1 maintains the disk launcher inspired design of HDP 1.0 with 
+        the capacity to be a variable-speed feeding system which will allow us to achieve our desired deployment 
+        pattern. 
+    </p>
+
+    <p>
+        Use the button below the graph to see the dispersion of the LunaSats with different motor power levels.
+    </p>
+
+    <h3 class="graphTitle">Spacecraft Prototype LunaSat Launch</h3>
+    <div id="scatterplot"></div>
+    <button type="button" id="tenPercent">10% Power</button>
+    <button type="button" id="twentyPercent">20% Power</button>
+    <button type="button" id="thirtyPercent">30% Power</button>
+
+    <br>
+    <br>
+    <a href="../../webClassPortal/projects.html">Back to Projects page</a>
+
 </body>
 </html>

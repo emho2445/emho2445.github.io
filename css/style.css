@@ -153,6 +153,12 @@ button:hover{
 #socials{
     max-width: 100px;
 }
+
+.graphTitle{
+    display: block;
+    float: center;
+    justify-content: center;
+}
 /* ********************************************** */
 
 /* Game Page Specific */
