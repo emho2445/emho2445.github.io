@@ -1,0 +1,495 @@
+/* Text Formatting */
+h1{
+    font-family: 'Comfortaa', cursive;
+    font-style: normal;
+    color: #42798F;
+}
+
+h2{
+    font-family: 'Comfortaa', cursive;
+    font-style: bold; /*it's giving this as an error but it does change the font to how I like it so I left it in here*/
+}
+
+h3{
+    font-family: 'Comfortaa';
+    font-style: light;/*it's giving this as an error but it does change the font to how I like it so I left it in here*/
+}
+
+h4{
+    font-family: 'Comfortaa';
+    font-style: normal;
+}
+
+h5{
+    font-family: 'Comfortaa';
+    font-style: bold;/*it's giving this as an error but it does change the font to how I like it so I left it in here*/
+    margin: 0;
+    font-size: 1em;
+}
+
+h6{
+    font-family: 'Comfortaa';
+    font-style: italic;
+    margin:0;
+    font-size: 0.9em;
+
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+}
+
+span{
+    font-family: 'Raleway', sans-serif;
+}
+
+label{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+}
+
+ol{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+}
+
+ul{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+}
+
+table{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+}
+/* ********************************************** */
+
+/* General Formatting */
+body{
+    width: 70%;
+    margin: 0 auto;
+}
+
+hr{
+    border-top: 4px solid #D2F4EB;
+}
+
+iframe{
+    width: 100%;
+    height: 600px;
+}
+/* ********************************************** */
+
+/* Buttons */
+button{
+    font-family: 'Raleway', sans-serif;
+    border-color: #93B5C2;
+    background-color: white;
+}
+
+button:hover{
+    font-family: 'Raleway', sans-serif;
+    border-color: #F69E96;
+    background-color: white;
+}
+/* ************************************************ */
+
+/* HomePage Specific */
+.intro{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    /* display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: wrap; */
+}
+
+.headshot{
+    border-radius: 50%;
+    /* height: 75%; */
+    width: 75%;
+    padding-top: 1rem;
+}
+
+/* Homepage gallery */
+.displayed-img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.full-img {
+    
+    display: block;
+    max-width: 60%;
+    height: 100%;
+}
+  
+  
+.thumb-bar img {
+    display: block;
+    width: 20%;
+    height: 20%;
+    float: left;
+    cursor: pointer;
+}
+/* ********************************************** */
+
+/* Featured Project Page Specific */
+
+.featuredimg {
+    height: 30%;
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ********************************************** */
+
+/* Contact Page Specific */
+#socials{
+    max-width: 100px;
+}
+
+.graphTitle{
+    display: block;
+    float: center;
+    justify-content: center;
+}
+/* ********************************************** */
+
+/* Game Page Specific */
+input[type=radio] {
+    margin:0px;
+}
+
+.num {
+    position:absolute;
+    display:inline-block;
+    font-family: 'Raleway', sans-serif;
+}
+
+#radiocontainer {
+    width:256px;
+    height:256px;
+    border:3px inset #c0c0c0;
+    position:relative;
+}
+/* *************************************************** */
+
+/* Professional Page Specific */
+form{
+    display: inline-flex;
+}
+
+.resumeButtons{
+    justify-content: center;
+}
+
+/*************************************************/
+
+/* GLEE Page Specific */
+#glogo{
+    float: right;
+    height: 25%;
+    width: 25%;
+}
+
+#lunasat{
+    float: left;
+    height:15%;
+    width: 15%;
+    padding: 7px;
+}
+
+#pdr{
+    float: left;
+    height: 50%;
+    width: 50%;
+    
+}
+/* ********************************************** */
+
+/* Class Portal Page Specific */
+.classPortalNav{
+    display: flex;
+    flex-flow: row, nowrap;
+    align-items: center; /* aligned it to the cross-axis which is vertical in this case */
+    justify-content: space-between;
+}
+/* ********************************************** */
+
+/* Materials Specific Page */
+.drawTree{
+    /* height: 30%; */
+    max-width: 30%;
+}
+
+.treeImg{
+    display: flex;
+    flex-flow: row, nowrap;
+    justify-content: space-around;
+}
+/* *********************************************** */
+
+/*Object Specific Page*/
+.labimg{
+    /* height: 30%; */
+    max-width: 30%;
+}
+
+.labimg2{
+    max-width: 80%;
+}
+
+/*link formatting*/
+a:link{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    color: #42798F;
+}
+
+a:visited{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    color: #93B5C2;
+}
+
+a:hover{
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    color: #F69E96;
+}
+/******************************************/
+
+/*navigation bar formatting*/
+nav{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 1fr 1fr;
+    padding-top: 1.5rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.navBar a{
+    text-decoration: none;
+    color:#42798F;
+}
+
+.eduNav{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+/******************************************/
+/* *************************************** */
+
+/* MEDIA QUERIES */
+
+/*mobile device*/
+@media screen and (max-width: 600px){
+    /*navBar*/
+    .navBar{
+        display:grid;
+        grid-template-rows:1fr 1fr;
+        border-bottom: 2px solid #D2F4EB;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        margin-top: 10px;
+        justify-content: center;
+        
+    }
+
+    .navBar h1{
+        padding-left: 25px ;
+    }
+
+    nav{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-top: 7px;
+        text-align: center;
+    }
+
+    nav a{
+        font-size: 0.8rem;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    h1{
+        font-size: 0.8rem;
+        padding-left: 25px ;
+    }
+
+    #galTitle{
+        font-size: 30px;
+    }
+
+    body{
+        width: 100%;
+    }
+
+    #resume{
+        margin: 5px;
+    }
+
+
+
+    /*Home Page Introduction*/
+    .intro{
+        display: block;
+        align-items: center;
+        margin: 15px;
+    } 
+    
+    .headshot{
+        border-radius: 50%;
+        /* height: 75%; */
+        width: 75%;
+        padding-top: 1rem;
+        padding-left: 30px;
+        align-items: center;
+    }
+
+    .full-img {
+    
+        display: block;
+        max-width: 100%;
+        height: 100%;
+    }
+
+    iframe{
+        height: 300px;
+        width: 100%;
+    }
+
+    object{
+        height: 300px;
+        width: 100%;
+    }
+
+    /* GLEE Page Specific */
+    #glogo{
+        float: right;
+        height: 50%;
+        width: 50%;
+    }
+
+    #lunasat{
+        float: left;
+        height:35%;
+        width: 35%;
+        padding: 7px;
+    }
+
+    #pdr{
+        float: left;
+        height: 100%;
+        width: 100%;
+    }
+
+}
+/* ************************************************* */
+
+/* medium sized screen */
+@media screen and (min-width:601px) and (max-width:1000px){
+    .navBar{
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+        border-bottom: 2px solid #D2F4EB;
+        position: sticky;
+        top: 0;
+        background-color: white;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    body{
+        width: 85%;
+        padding-left: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    nav a{
+        font-size: 0.9rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+
+    /*Home Page Introduction*/
+    .intro{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-left: auto;
+        margin-right: auto;
+        /* display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        flex-wrap: wrap; */
+    }
+    
+    .headshot{
+        border-radius: 50%;
+        /* height: 75%; */
+        width: 60%;
+        /* padding-top: 1rem; */
+    }
+
+    .homeGallery{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        gap: 5px;
+    }
+
+}
+
+
+/*big desktop screen*/
+@media screen and (min-width: 1000px){
+    .navBar{
+        display:grid;
+        grid-template-columns: 1fr 2fr;
+        border-bottom: 2px solid #D2F4EB;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        justify-content: center;
+    }
+
+    nav{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    /*Home Page Introduction*/
+
+    .intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+
+    /*Eduction Page*/
+
+    .heading{
+        text-align: center;
+    }
+
+    .imgpro{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+}
