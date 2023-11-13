@@ -226,6 +226,13 @@ form{
 .drawTree{
     /* height: 30%; */
     max-width: 30%;
+    /* max-height: 30%; */
+}
+
+.measurementDraw{
+    /* max-height: 30%; */
+    width: 50%;
+    height: 50%;
 }
 
 .treeImg{
