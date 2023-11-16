@@ -200,6 +200,117 @@
             were using alongside it to do some of the more complicated data visualizations. 
         </p>
 
+    <!-- Entry 5: Project 2 Milestone 1 -->
+    <h3>Project 2 - Milestone 1</h3>
+    <h4>November 16, 2023 </h4>
+
+    <h5>Group Members:</h5>
+    <p>
+        Kaya Walker, Emma Hopson, Sydney Calcagno
+    </p>
+
+    <h5>Overall Project Description:</h5>
+    <p>
+        Our single page application (SPA) is to be a fun trivia game that gives the player different trivia questions within different categories. 
+        The inspiration for this SPA is the game Trivia Crack that became extremely popular around 2014. In Trivia Crack players would spin the 
+        wheel to get the question category, if they got the question correct they would get to spin the wheel for a new question. The goal was to 
+        get a character, which was a symbol of category mastery, before the other person. Our website will draw similar features from this game. 
+        We intend to have different question categories and present the user with different types of trivia questions. Our website will be different 
+        in key ways as ours is going to be single player and track overall success/progress instead of collecting icons.
+    </p>
+    <p>
+        Our audience will most likely be ages 16-35 as we intend to find an API that has cultural trivia meant for young adults and teens. 
+    </p>
+
+    <h5>Wireframe:</h5>
+    <object data="./TriviaProject.pdf" type="application/pdf" width="100%" height="600px"></object>
+
+    <h5>Sources:</h5>
+    <p>
+        For this project we are going to use a trivia API to generate all of the questions. The API that we chose is Open Trivia Database. This API 
+        is free and does not require an API key or account. This API also allows us to pull more than just the question and answer, it has other false 
+        answer options, a difficulty level and a category. This will allow us to potentially track the “expert” level of the player as well. 
+    </p>
+    <p>Link to Open Trivia Database: <a href="https://opentdb.com/api_config.php">https://opentdb.com/api_config.php</a></p>
+    <p>
+        Outside of this API we do not anticipate needing any additional information or resources.
+    </p>
+
+    <h5>Personal Contribution:</h5>
+    <p>
+        My contribution to this team will be helping read in the API, getting our GitHub set up and potentially helping with the progress tracker for 
+        our stretch goals. I think that we are all on the same page that we are happy to help with anything that needs to be done. I have also talked 
+        to both of my team members about being gone from December 10-13 so I will do my best to have all of my parts done before I leave. 
+    </p>
+
+    <h5>Goals:</h5>
+    <p>Prototyping/Proof of Concept:</p>
+    <ul>
+        <li>
+            Reading in the API
+        </li>
+        <li>
+            Creating component list (like Assignment 6)
+        </li>
+        <li>
+            Setting up GitHub for the team
+        </li>
+    </ul>
+
+    <p>Minimum Viable Product:</p>
+    <ul>
+        <li>
+            Creating a basic trivia game that takes in data from the API and displays different types of questions to the player
+        </li>
+        <li>
+            Having the website styled well
+        </li>
+    </ul>
+
+    <p>Stretch Goals:</p>
+    <ul>
+        <li>
+            Track player's success with a progress bar
+        </li>
+        <li>
+            Track the player's expert level by understanding the percentage of questions answered correctly at the different levels
+        </li>
+        <li>
+            Tracking progress by question category
+        </li>
+    </ul>
+
+    <!-- Entry 6: Assignment 6 -->
+    <h3>Assignment 6: Plan a React To-Do List</h3>
+    <h4>November 16, 2023 </h4>
+
+    <img class="drawTree" src="./ReactMockUp.jpeg" alt="Assignment 6 React Mockup">
+
+    <p>
+        For step one I created the mockup drawn above in dark navy blue. For step one I broke that mockup into the anticipated components. 
+        The green box outlines the overall application which is the searchable and filterable to-do list. Next the pink box outlines 
+        the search/filter bar. The orange outlines the add task component. The light purple outlines the overall task list. Each task 
+        is outlined in red. 
+    </p>
+    <p>
+        The search/filter component will dictate the order in which the to-dos are displayed in the task list. The add component will 
+        also affect the task list as it can add new items to the task list.
+    </p>
+    <p>
+        Next I moved to step three to find my state. To find my minimal state I walked through the questions in the reading to determine 
+        what the state variables are. I determined that the state variables are the search text box and the filter checkboxes. These components 
+        change over time and are not able to be computed from other things. They also affect other aspects of the application.
+    </p>
+    <p>
+        The add button and filtered/unfiltered task list are not state. The add button itself does not change over time. The task list might 
+        change overtime but it is computed from other properties (props) that are passed down to it. 
+    </p>
+    <p>
+        For step four I needed to determine where my state would live. Given the information above, I believe that the state should sit in the search/filter 
+        component that is outlined in pink. This would be able to pass state down to the task list items with the larger task list.
+    </p>
+    
+
 
 </body>
 </html>
