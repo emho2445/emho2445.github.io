@@ -19,12 +19,13 @@ export default function App(){
   return (
     <>
       <countContext.Provider value={count}>
-        <h1>Hello world!</h1>
+        <h1>Feasibility Test for React</h1>
         <Button count={count} incrementCount={incrementCount}/>
         <Button count={count} incrementCount={incrementCount}/>
       </countContext.Provider>
         <Card padding="large">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse delectus molestiae hic qui? Velit quisquam eaque dolore nobis at impedit, accusantium sint, nemo dolorum nostrum necessitatibus minus! Quidem, reprehenderit possimus?</p>
+          <p>This site is made using React to create components. This is the same type of process and skill set that will be required in our website.</p>
+          <p>The buttons use different types of state properties to talk to each other.</p>
         </Card>
       <countContext.Provider value={countTwo}>
         <Card padding="small">
