@@ -252,6 +252,22 @@ form{
     max-width: 80%;
 }
 
+/*Project Master Page Specific*/
+#PMLogo{
+    width: 30%;
+    height: 30%;
+}
+
+#pmHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* *********************************************** */
+
 /*link formatting*/
 a:link{
     font-family: 'Raleway', sans-serif;
